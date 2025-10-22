@@ -1,17 +1,16 @@
 class Stack:
-    def __init__(self):
-        self.stack = []
+    def _init_(self):
+        self.items = []
 
     def push(self, item):
-        self.stack.append(item)
+        self.items.append(item)
 
-    def pop(self):
-        if len(self.stack) == 0:
+    def peek(self):
+        if not self.items:
             return "Stack is empty"
-        return self.stack.pop(0)  # ❌ Wrong index — should pop from end
+        return self.items[-1]  # ✅ Top element
 
 s = Stack()
-s.push(1)
-s.push(2)
-s.push(3)
-print(s.pop())  # Expected 3
+s.push(10)
+s.push(20)
+print(s.peek())
